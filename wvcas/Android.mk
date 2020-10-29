@@ -11,6 +11,9 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_PATH_32 := $(WVCAS_PATH_32)
 LOCAL_SRC_FILES_arm := $(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
+LOCAL_SHARED_LIBRARIES := libc++ libc libcrypto libcutils libdl liblog libm libteec_sys libutils \
+	libz
+LOCAL_CHECK_ELF_FILES := false
 include $(BUILD_PREBUILT)
 
 #####################################################################
@@ -25,6 +28,9 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_PATH_32 := $(WVCAS_PATH_32)
 LOCAL_SRC_FILES_arm := $(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
+LOCAL_SHARED_LIBRARIES := libc++ libc libdl liblog libm liboemcrypto_cas libprotobuf-cpp-full \
+	libutils
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 include $(BUILD_PREBUILT)
 
 #####################################################################
@@ -40,6 +46,8 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_PATH_32 := $(WVCAS_PATH_32)
 LOCAL_SRC_FILES_arm := $(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
+LOCAL_SHARED_LIBRARIES := libam_adp_adec libc++ libc libcrypto libcutils libdl liblog libm \
+	liboemcrypto_cas libssl libutils libwvmediacas libz
 include $(BUILD_PREBUILT)
 endif
 #####################################################################
